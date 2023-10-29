@@ -36,8 +36,8 @@ contract Bridge is BaseScript {
         address refundAddress = 0x429b1c760DCEAe09D0967870C33abfd43aE8E2d1;
         bytes memory hookMetadata = abi.encodePacked(variant, value, gasLimit, refundAddress, amount);
         Mailbox mailbox = Mailbox(MAILBOX_ADDRESS);
-        uint256 quoteFee = mailbox.quoteDispatch(DESTINATION_DOMAIN, recipientBytes, message, hookMetadata, SCROLL_HOOK);
-        mailbox.dispatch{ value: amount + L1_FEE + L2_FEE + quoteFee }(
+        uint256 fee = mailbox.quoteDispatch(DESTINATION_DOMAIN, recipientBytes, message, hookMetadata, SCROLL_HOOK);
+        mailbox.dispatch{ value: amount + L1_FEE + L2_FEE + fee }(
             DESTINATION_DOMAIN, recipientBytes, message, hookMetadata, SCROLL_HOOK
         );
     }
