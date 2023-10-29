@@ -30,7 +30,7 @@ forge script script/Deploy.s.sol:DeployIsm --rpc-url scroll_sepolia --legacy --b
 > Note: you need to set the ISM address in the script
 
 ```sh
-forge script script/Deploy.s.sol:DeployHook --rpc-url sepolia --legacy --broadcast -vvvv
+forge script script/Deploy.s.sol:DeployHook --rpc-url sepolia --broadcast -vvvv
 ```
 
 3. Set the authorized hook
@@ -43,22 +43,29 @@ forge script script/Deploy.s.sol:SetAuthorizedHook --rpc-url scroll_sepolia --le
 
 ## Example deployment
 
-### ScrollHook
+- ScrollHook
+  - Chain: Sepolia (`11155111`)
+  - Address:
+    [0x5248130913109c347695f3beA0682eeE42c2436F](https://sepolia.etherscan.io/address/0x5248130913109c347695f3beA0682eeE42c2436F)
+- ScrollIsm
+  - Chain: Scroll Sepolia (`534351`)
+  - Address:
+    [0x65B7249f2D2b8EE2fCFD19f2ccE2D4522031BFb9](https://sepolia.scrollscan.com/address/0x65B7249f2D2b8EE2fCFD19f2ccE2D4522031BFb9)
 
-Chain: Sepolia (11155111)
+## Example transfer
 
-Address:
-[0x5248130913109c347695f3beA0682eeE42c2436F](https://sepolia.etherscan.io/address/0x5248130913109c347695f3beA0682eeE42c2436F)
+The bridging script:
 
-Transaction:
-[0x0465249b42536bdb8b69b7e14233313486c050658a6a75bdb50d9d623896ddea](https://sepolia.etherscan.io/tx/0x0465249b42536bdb8b69b7e14233313486c050658a6a75bdb50d9d623896ddea)
+```sh
+forge script script/Bridge.s.sol --rpc-url sepolia --broadcast -vvvv
+```
 
-### ScrollIsm
+Amount: 0.00042069 ETH
 
-Chain: Scroll Sepolia (534351)
+Message ID: `3421af3988efb00eaa3efcb4322fa6c272a28b651d680bdb02752f37ecead7a1`
 
-Address:
-[0x65B7249f2D2b8EE2fCFD19f2ccE2D4522031BFb9](https://sepolia.scrollscan.com/address/0x65B7249f2D2b8EE2fCFD19f2ccE2D4522031BFb9)
+L1 Transaction:
+[0xa8d1e2ee9373d614db46b79c1ed9bc82c886d16ed0f4e90332924c4aa52b2d96](https://sepolia.etherscan.io/tx/0xa8d1e2ee9373d614db46b79c1ed9bc82c886d16ed0f4e90332924c4aa52b2d96)
 
-Transaction
-[0x57ee94a2562fb9aa8c4f6dea619301b766015a6e94529632a0ede42f62ab3947](https://sepolia.scrollscan.com/tx/0x57ee94a2562fb9aa8c4f6dea619301b766015a6e94529632a0ede42f62ab3947)
+L2 Transaction:
+[0x99e3b4a59b7434ee85561dd5908ee089def64b5f612f7e1cd49480addf6c347c](https://sepolia.scrollscan.com/tx/0x99e3b4a59b7434ee85561dd5908ee089def64b5f612f7e1cd49480addf6c347c)
