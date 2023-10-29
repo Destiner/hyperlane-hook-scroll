@@ -12,7 +12,7 @@ contract Bridge is BaseScript {
     uint32 DESTINATION_DOMAIN = 11_155_111;
     IPostDispatchHook SCROLL_HOOK = IPostDispatchHook(0x5248130913109c347695f3beA0682eeE42c2436F);
 
-    uint256 amount = 0.0001 ether;
+    uint256 amount = 0.00042069 ether;
     uint256 L1_FEE = 0;
     uint256 L2_FEE = 0.0002218 ether;
 
