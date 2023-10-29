@@ -1,10 +1,10 @@
 {
-  "name": "@Destiner/hyperlane-hook-scroll",
+  "name": "hyperlane-hook-scroll",
   "description": "",
   "version": "1.0.0",
   "author": {
     "name": "Destiner",
-    "url": "https://github.com/Destiner"
+    "url": "https://github.com/Destiner/hyperlane-hook-scroll"
   },
   "devDependencies": {
     "prettier": "^3.0.0"
