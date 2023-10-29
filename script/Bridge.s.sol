@@ -14,6 +14,7 @@ contract Bridge is BaseScript {
     uint32 DESTINATION_DOMAIN = 11_155_111;
     IPostDispatchHook SCROLL_HOOK = IPostDispatchHook(0x5248130913109c347695f3beA0682eeE42c2436F);
     IL2GasPriceOracle l2GasPriceOracle = IL2GasPriceOracle(0x247969F4fad93a33d4826046bc3eAE0D36BdE548);
+    uint256 GAS_LIMIT = 120_000;
 
     uint256 amount = 0.000123 ether;
 
@@ -32,11 +33,10 @@ contract Bridge is BaseScript {
         address recipient = msg.sender;
         bytes32 recipientBytes = TypeCasts.addressToBytes32(recipient);
         uint16 variant = 1;
-        uint256 gasLimit = 168_000;
-        uint256 fee = l2GasPriceOracle.estimateCrossDomainMessageFee(gasLimit);
+        uint256 fee = l2GasPriceOracle.estimateCrossDomainMessageFee(GAS_LIMIT);
         uint256 value = amount + fee;
         address refundAddress = 0x429b1c760DCEAe09D0967870C33abfd43aE8E2d1;
-        bytes memory hookMetadata = abi.encodePacked(variant, value, gasLimit, refundAddress, amount);
+        bytes memory hookMetadata = abi.encodePacked(variant, value, GAS_LIMIT, refundAddress, amount);
         Mailbox mailbox = Mailbox(MAILBOX_ADDRESS);
         uint256 quote = mailbox.quoteDispatch(DESTINATION_DOMAIN, recipientBytes, message, hookMetadata, SCROLL_HOOK);
         mailbox.dispatch{ value: amount + fee + quote }(

@@ -40,7 +40,7 @@ contract ScrollHook is AbstractMessageIdAuthHook {
     IScrollMessenger public immutable l1Messenger;
 
     // Gas limit for sending messages to L2
-    uint32 internal constant DEFAULT_GAS_LIMIT = 168_000;
+    uint32 internal constant DEFAULT_GAS_LIMIT = 120_000;
 
     // ============ Constructor ============
 
