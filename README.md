@@ -6,10 +6,10 @@ A hook for L1 -> L2 transfers on Scroll powered by the native bridge.
 
 It might be helpful to have a high-level knowledge of the Scroll bridging.
 
-* [The Scroll Messenger — Docs](https://docs.scroll.io/en/developers/l1-and-l2-bridging/the-scroll-messenger/)
-* [Transaction Fees on Scroll — Docs](https://docs.scroll.io/en/developers/transaction-fees-on-scroll/)
-* [L1ScrollMessenger.sol — GitHub](https://github.com/scroll-tech/scroll/blob/develop/contracts/src/L1/L1ScrollMessenger.sol)
-* [L2ScrollMessenger.sol — GitHub](https://github.com/scroll-tech/scroll/blob/develop/contracts/src/L2/L2ScrollMessenger.sol)
+- [The Scroll Messenger — Docs](https://docs.scroll.io/en/developers/l1-and-l2-bridging/the-scroll-messenger/)
+- [Transaction Fees on Scroll — Docs](https://docs.scroll.io/en/developers/transaction-fees-on-scroll/)
+- [L1ScrollMessenger.sol — GitHub](https://github.com/scroll-tech/scroll/blob/develop/contracts/src/L1/L1ScrollMessenger.sol)
+- [L2ScrollMessenger.sol — GitHub](https://github.com/scroll-tech/scroll/blob/develop/contracts/src/L2/L2ScrollMessenger.sol)
 
 ## Setup
 
